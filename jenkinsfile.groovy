@@ -1,5 +1,5 @@
 pipeline{
-    agent centos
+    agent any
 
     stages{
         stage('clone repository'){
