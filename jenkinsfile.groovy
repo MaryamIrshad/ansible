@@ -4,13 +4,13 @@ pipeline{
     stages{
         stage('Create test file'){
             steps{
-                    dir ('/home/centoskey/workspace/workspace/'){
+                    
                         script{
                              sh """
                              echo "Hello, this is sample jenkins file" > test.txt
                              """
                         }
-                    }
+                    
                    
                 }
             }
