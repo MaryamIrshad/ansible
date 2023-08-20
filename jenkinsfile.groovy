@@ -1,8 +1,5 @@
 pipeline{
-    agent
-    {
-        label 'centos'
-    }
+    agent any
 
     stages{
         stage('Create test file'){
