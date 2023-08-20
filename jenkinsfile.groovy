@@ -17,8 +17,7 @@ pipeline{
                    
                 }
             }
-        }
-        stage('print path'){
+            stage('print path'){
             steps{
                 script{
                     sh 'echo $PATH'
@@ -26,6 +25,8 @@ pipeline{
             }
         }
 
+        }
+        
     }
     post{
         always {
@@ -33,4 +34,3 @@ pipeline{
             archiveArtifacts artifacts: '/home/centoskey/workspace/workspace/test.txt', allowEmptyArchive: true
         }
     }
-
