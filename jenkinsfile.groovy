@@ -12,7 +12,7 @@ pipeline{
         stage('ansible playbook'){
             steps{
                 script{
-                    sh 'ansible-playbook -i C:\ProgramData\Jenkins\.jenkins\workspace\test\ansible\inventory C:\ProgramData\Jenkins\.jenkins\workspace\test\ansible\installpackage.yml'
+                    sh 'ansible-playbook -i "C:\ProgramData\Jenkins\.jenkins\workspace\test\ansible\inventory" "C:\ProgramData\Jenkins\.jenkins\workspace\test\ansible\installpackage.yml"'
                 }
             }
         }
