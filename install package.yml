@@ -1,0 +1,15 @@
+---
+- name: Install packages
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install openssl
+      yum:
+        name: openssl
+        state: present
+    
+    - name: Install python
+      yum: 
+        name: python
+        state: present
