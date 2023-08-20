@@ -28,6 +28,6 @@ pipeline{
     post{
         always {
             
-            archiveArtifacts artifacts: '/home/centoskey/workspace/workspace/test.txt', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'test.txt', allowEmptyArchive: true
         }
     }
