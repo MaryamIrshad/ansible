@@ -33,4 +33,4 @@ pipeline{
             archiveArtifacts artifacts: '/home/centoskey/workspace/workspace/test.txt', allowEmptyArchive: true
         }
     }
-}
+
