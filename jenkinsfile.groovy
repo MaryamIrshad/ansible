@@ -1,20 +1,36 @@
 pipeline{
-    agent {label 'centos'}
+    agent
+    {
+        label 'centos'
+    }
 
     stages{
-        stage('clone repository'){
+        stage('Create test file'){
             steps{
-                script{
-                    def gitRepoUrl = 'https://github.com/MaryamIrshad/ansible.git'
+                    dir ('/home/centoskey/workspace/workspace/'){
+                        script{
+                             sh """
+                             echo "Hello, this is sample jenkins file" > test.txt
+                             """
+                        }
+                    }
+                   
                 }
             }
         }
-        stage('ansible playbook'){
+        stage('print path'){
             steps{
                 script{
-                    sh 'ansible-playbook -i ansible/inventory ansible/installpackage.yml'
+                    sh 'echo $PATH'
                 }
             }
+        }
+
+    }
+    post{
+        always {
+            
+            archiveArtifacts artifacts: '/home/centoskey/workspace/workspace/test.txt', allowEmptyArchive: true
         }
     }
 }
